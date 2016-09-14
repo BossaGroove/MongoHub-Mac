@@ -257,7 +257,7 @@ static MODReadPreferencesReadMode preferenceReadModeFromTag(NSInteger tag)
 
 - (void)modalForWindow:(NSWindow *)window
 {
-    [self.window beginSheet:self.window completionHandler:^(NSModalResponse returnCode) {
+    [window beginSheet:self.window completionHandler:^(NSModalResponse returnCode) {
             [self.window orderOut:self];
     }];
     

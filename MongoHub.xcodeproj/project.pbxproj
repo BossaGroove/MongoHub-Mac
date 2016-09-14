@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		02216F201412D54600789BD1 /* Submodules */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 02216F221412D54600789BD1 /* Build configuration list for PBXAggregateTarget "Submodules" */;
-			buildPhases = (
-				02D5A7F41442019100C7768C /* Update submodules */,
-			);
-			dependencies = (
-			);
-			name = Submodules;
-			productName = Submodules;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		020F511A14896DE700D4B54B /* MHTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 020F511814896DE700D4B54B /* MHTabViewController.m */; };
 		020F511B14896DE700D4B54B /* MHTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 020F511914896DE700D4B54B /* MHTabView.xib */; };
@@ -84,7 +70,6 @@
 		02B143DC147C720D005AB320 /* MHFileImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B143DB147C720D005AB320 /* MHFileImporter.m */; };
 		02C3452A1A423C85004F0D2C /* MHIndexEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02C345291A423C85004F0D2C /* MHIndexEditor.xib */; };
 		02C345321A436A18004F0D2C /* MHIndexEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C345311A436A18004F0D2C /* MHIndexEditorController.m */; };
-		02C4C1C819A231090002FBD8 /* MongoObjCDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02C4C1C519A230BE0002FBD8 /* MongoObjCDriver.framework */; };
 		02C4C1CA19A231600002FBD8 /* MongoObjCDriver.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02C4C1C519A230BE0002FBD8 /* MongoObjCDriver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		02CEE9BE1486DD7A00E488DA /* MHTabTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CEE9BD1486DD7A00E488DA /* MHTabTitleView.m */; };
 		02CF9CC919AA9E8A00EEF76B /* MHMongoHubMigration9to10.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 02CF9CC819AA9E8A00EEF76B /* MHMongoHubMigration9to10.xcmappingmodel */; };
@@ -161,6 +146,7 @@
 		1DF96E3D11881EB400C35AB8 /* MHEditNameWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF96E3C11881EB400C35AB8 /* MHEditNameWindow.xib */; };
 		1DF96F9211883B3800C35AB8 /* MHQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF96F9111883B3800C35AB8 /* MHQueryViewController.m */; };
 		1DF96F9411883D5E00C35AB8 /* MHQueryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF96F9311883D5E00C35AB8 /* MHQueryView.xib */; };
+		277F6A971D57BF0B00ECBC89 /* MongoObjCDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277F6A921D57BEE800ECBC89 /* MongoObjCDriver.framework */; };
 		2F7446990DB6B7EA00F9684A /* MHMainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446970DB6B7EA00F9684A /* MHMainMenu.xib */; };
 		77C8280E06725ACE000B614F /* MHApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8280C06725ACE000B614F /* MHApplicationDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -169,13 +155,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		02216F631412D6F000789BD1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 02216F201412D54600789BD1;
-			remoteInfo = Submodules;
-		};
 		027062C719DF803600E6C36A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 02C4C15F19A230BE0002FBD8 /* MongoObjCDriver.xcodeproj */;
@@ -196,6 +175,34 @@
 			proxyType = 2;
 			remoteGlobalIDString = 02ABA1C014103B37000417F4;
 			remoteInfo = MongoObjCDriver;
+		};
+		277327771D57BB9E00D31082 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02C4C15F19A230BE0002FBD8 /* MongoObjCDriver.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 02ABA1BF14103B37000417F4;
+			remoteInfo = MongoObjCDriver;
+		};
+		277F6A911D57BEE800ECBC89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277F6A8A1D57BEE800ECBC89 /* MongoObjCDriver.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02ABA1C014103B37000417F4;
+			remoteInfo = MongoObjCDriver;
+		};
+		277F6A931D57BEE800ECBC89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277F6A8A1D57BEE800ECBC89 /* MongoObjCDriver.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02E6400C19DB68F900FEFEFC;
+			remoteInfo = "MongoObjCDriver Tests";
+		};
+		277F6A951D57BEE800ECBC89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277F6A8A1D57BEE800ECBC89 /* MongoObjCDriver.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02F4EA7A19F1ABF400BE9695;
+			remoteInfo = test;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -420,6 +427,7 @@
 		1DF96E3C11881EB400C35AB8 /* MHEditNameWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MHEditNameWindow.xib; sourceTree = "<group>"; };
 		1DF96F9111883B3800C35AB8 /* MHQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHQueryViewController.m; sourceTree = "<group>"; };
 		1DF96F9311883D5E00C35AB8 /* MHQueryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MHQueryView.xib; sourceTree = "<group>"; };
+		277F6A8A1D57BEE800ECBC89 /* MongoObjCDriver.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MongoObjCDriver.xcodeproj; path = MongoObjCDriver/MongoObjCDriver.xcodeproj; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -444,7 +452,7 @@
 				1DEC7FF112B7EDB900FC804E /* Security.framework in Frameworks */,
 				02FCD3CF13BB9EA400316A9F /* Sparkle.framework in Frameworks */,
 				02FCD3D813BBA4A300316A9F /* MCPKit.framework in Frameworks */,
-				02C4C1C819A231090002FBD8 /* MongoObjCDriver.framework in Frameworks */,
+				277F6A971D57BF0B00ECBC89 /* MongoObjCDriver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,9 +791,20 @@
 			path = "Syntax Definitions";
 			sourceTree = "<group>";
 		};
+		277F6A8B1D57BEE800ECBC89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				277F6A921D57BEE800ECBC89 /* MongoObjCDriver.framework */,
+				277F6A941D57BEE800ECBC89 /* MongoObjCDriver Tests.xctest */,
+				277F6A961D57BEE800ECBC89 /* test */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* MongoHub */ = {
 			isa = PBXGroup;
 			children = (
+				277F6A8A1D57BEE800ECBC89 /* MongoObjCDriver.xcodeproj */,
 				0242F11B1989475F00C73FEC /* MongoHub.entitlements */,
 				02D1872F14636F1300D49ED1 /* Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -856,7 +875,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				02216F641412D6F000789BD1 /* PBXTargetDependency */,
+				277327781D57BB9E00D31082 /* PBXTargetDependency */,
 			);
 			name = MongoHub;
 			productInstallPath = "$(HOME)/Applications";
@@ -897,6 +916,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 277F6A8B1D57BEE800ECBC89 /* Products */;
+					ProjectRef = 277F6A8A1D57BEE800ECBC89 /* MongoObjCDriver.xcodeproj */;
+				},
+				{
 					ProductGroup = 02C4C16019A230BE0002FBD8 /* Products */;
 					ProjectRef = 02C4C15F19A230BE0002FBD8 /* MongoObjCDriver.xcodeproj */;
 				},
@@ -904,7 +927,6 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* MongoHub */,
-				02216F201412D54600789BD1 /* Submodules */,
 			);
 		};
 /* End PBXProject section */
@@ -929,6 +951,27 @@
 			fileType = wrapper.framework;
 			path = MongoObjCDriver.framework;
 			remoteRef = 02C4C1C419A230BE0002FBD8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		277F6A921D57BEE800ECBC89 /* MongoObjCDriver.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MongoObjCDriver.framework;
+			remoteRef = 277F6A911D57BEE800ECBC89 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		277F6A941D57BEE800ECBC89 /* MongoObjCDriver Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "MongoObjCDriver Tests.xctest";
+			remoteRef = 277F6A931D57BEE800ECBC89 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		277F6A961D57BEE800ECBC89 /* test */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = test;
+			remoteRef = 277F6A951D57BEE800ECBC89 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1021,23 +1064,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		02D5A7F41442019100C7768C /* Update submodules */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Update submodules";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./scripts/update_submodule.sh jeromelebel mongo-objc-driver master Libraries/MongoObjCDriver\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1105,10 +1131,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		02216F641412D6F000789BD1 /* PBXTargetDependency */ = {
+		277327781D57BB9E00D31082 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 02216F201412D54600789BD1 /* Submodules */;
-			targetProxy = 02216F631412D6F000789BD1 /* PBXContainerItemProxy */;
+			name = MongoObjCDriver;
+			targetProxy = 277327771D57BB9E00D31082 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1132,20 +1158,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		02216F231412D54600789BD1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		02216F241412D54600789BD1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		26FC0A850875C7B200E6366F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1229,15 +1241,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		02216F221412D54600789BD1 /* Build configuration list for PBXAggregateTarget "Submodules" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				02216F231412D54600789BD1 /* Debug */,
-				02216F241412D54600789BD1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		26FC0A840875C7B200E6366F /* Build configuration list for PBXNativeTarget "MongoHub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
