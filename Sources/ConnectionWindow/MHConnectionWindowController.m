@@ -204,7 +204,7 @@
             }];
         } else {
             self.client.sshMapping = self.sshBindedPortMapping;
-            if (self.connectionStore.useSSL) {
+            if (self.connectionStore.useSSL.boolValue) {
                 self.client.sslOptions = [[[MODSSLOptions alloc] initWithPemFileName:nil pemPassword:nil caFileName:nil caDirectory:nil crlFileName:nil weakCertificate:self.connectionStore.weakCertificate.boolValue] autorelease];
             }
             self.client.readPreferences = [MODReadPreferences readPreferencesWithReadMode:self.connectionStore.defaultReadMode];
