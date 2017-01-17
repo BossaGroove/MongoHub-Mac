@@ -107,7 +107,7 @@
     stringURL = [[NSPasteboard generalPasteboard] stringForType:NSPasteboardTypeString];
     if (![stringURL hasPrefix:@"mongodb://"]) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"No URL found"];
         [alert setInformativeText:@""];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -123,7 +123,7 @@
         connectionStore = [[[MHConnectionStore alloc] initWithEntity:entity insertIntoManagedObjectContext:nil] autorelease];
         if (![connectionStore setValuesFromStringURL:stringURL errorMessage:&errorMessage]) {
        
-            NSAlert* alert = [NSAlert init];
+            NSAlert* alert = [[NSAlert alloc] init];
             [alert setMessageText:@"No URL found"];
             [alert setInformativeText:[NSString stringWithFormat:@"%@", stringURL]];
             [alert setAlertStyle:NSWarningAlertStyle];
@@ -164,7 +164,7 @@
             connectionStore = [[[MHConnectionStore alloc] initWithEntity:entity insertIntoManagedObjectContext:nil] autorelease];
             if (![connectionStore setValuesFromStringURL:stringURL errorMessage:&errorMessage]) {
                
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:errorMessage];
                 [alert setInformativeText:[NSString stringWithFormat:@"%@", stringURL]];
                 [alert setAlertStyle:NSWarningAlertStyle];
@@ -192,7 +192,7 @@
                 return YES;
             } else {
                 
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:errorMessage];
                 [alert setInformativeText:[NSString stringWithFormat:@"%@", stringURL]];
                 [alert setAlertStyle:NSWarningAlertStyle];

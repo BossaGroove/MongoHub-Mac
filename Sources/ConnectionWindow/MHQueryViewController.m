@@ -381,7 +381,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
             if (removeQuery.error) {
                 self.removeResultsTextField.stringValue = @"Error!";
                
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:@"Error"];
                 [alert setInformativeText:[NSString stringWithFormat:@"%@", removeQuery.error.localizedDescription]];
                 [alert setAlertStyle:NSWarningAlertStyle];
@@ -629,7 +629,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
         
         [self.insertLoaderIndicator stopAnimation:nil];
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Error"];
         [alert setInformativeText:[NSString stringWithFormat:@"%@", error.localizedDescription]];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -656,7 +656,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
                 flashColor = [NSColor redColor];
                 [self.insertResultsTextField setStringValue:@"Error!"];
                 
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:@"Error"];
                 [alert setInformativeText:[NSString stringWithFormat:@"%@", mongoQuery.error.localizedDescription]];
                 [alert setAlertStyle:NSWarningAlertStyle];
@@ -912,7 +912,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
     query = [MODRagelJsonParser objectsFromJson:[self formatedJsonWithTextField:self.updateCriteriaTextField replace:NO emptyValid:NO] withError:&error];
     if (error) {
        
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Error In Query"];
         [alert setInformativeText:[NSString stringWithFormat:@"%@", error.localizedDescription]];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -939,7 +939,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
         value = [MODRagelJsonParser objectsFromJson:[self formatedJsonWithTextField:textField replace:NO emptyValid:NO] withError:&error];
         if (error) {
             
-            NSAlert* alert = [NSAlert init];
+            NSAlert* alert = [[NSAlert alloc] init];
             [alert setMessageText:[NSString stringWithFormat:@"Error In %@", key]];
             [alert setInformativeText:[NSString stringWithFormat:@"%@", error.localizedDescription]];
             [alert setAlertStyle:NSWarningAlertStyle];
@@ -976,7 +976,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
             if (updateQuery.error) {
                 self.updateResultsTextField.stringValue = @"Error!";
                 
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:@"Error"];
                 [alert setInformativeText:[NSString stringWithFormat:@"%@", updateQuery.error.localizedDescription]];
                 [alert setAlertStyle:NSWarningAlertStyle];
@@ -1053,7 +1053,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
     criteria = [MODRagelJsonParser objectsFromJson:[self formatedJsonWithTextField:self.removeCriteriaTextField replace:NO emptyValid:NO] withError:&error];
     if (error) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Error"];
         [alert setInformativeText:[NSString stringWithFormat:@"%@", error.localizedDescription]];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -1064,7 +1064,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
         
     } else if ([criteria count] == 0 && ((self.view.window.currentEvent.modifierFlags & NSCommandKeyMask) != NSCommandKeyMask)) {
   
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:[NSString stringWithFormat:@"Are you sure you want to remove all documents in %@", self.collection.absoluteName]];
         [alert setInformativeText:@"This action cannot be undone"];
         [alert addButtonWithTitle:@"Cancel"];
@@ -1107,7 +1107,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
     [self.collection findIndexesWithCallback:^(NSArray *indexes, MODQuery *mongoQuery) {
         if (mongoQuery.error) {
             
-            NSAlert* alert = [NSAlert init];
+            NSAlert* alert = [[NSAlert alloc] init];
             [alert setMessageText:@"Error"];
             [alert setInformativeText:[NSString stringWithFormat:@"%@", mongoQuery.error.localizedDescription]];
             [alert setAlertStyle:NSWarningAlertStyle];
@@ -1140,7 +1140,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
         [self.collection dropIndexName:[[[indexes objectAtIndex:0] objectForKey:@"objectvalue"] objectForKey:@"name"] callback:^(MODQuery *mongoQuery) {
             if (mongoQuery.error) {
                 
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:@"Error"];
                 [alert setInformativeText:[NSString stringWithFormat:@"%@", mongoQuery.error.localizedDescription]];
                 [alert setAlertStyle:NSWarningAlertStyle];
@@ -1186,7 +1186,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
         pipeline = [MODRagelJsonParser objectsFromJson:self.aggregationPipeline.string withError:&error];
         if (error) {
             
-            NSAlert* alert = [NSAlert init];
+            NSAlert* alert = [[NSAlert alloc] init];
             [alert setMessageText:@"Error in Pipeline"];
             [alert setInformativeText:[NSString stringWithFormat:@"%@", error.localizedDescription]];
             [alert setAlertStyle:NSWarningAlertStyle];
@@ -1206,7 +1206,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
         options = [MODRagelJsonParser objectsFromJson:self.aggregationOptions.string withError:&error];
         if (error) {
             
-            NSAlert* alert = [NSAlert init];
+            NSAlert* alert = [[NSAlert alloc] init];
             [alert setMessageText:@"Error in Options"];
             [alert setInformativeText:[NSString stringWithFormat:@"%@", error.localizedDescription]];
             [alert setAlertStyle:NSWarningAlertStyle];
@@ -1224,7 +1224,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
         
         if (mongoQuery.error) {
             
-            NSAlert* alert = [NSAlert init];
+            NSAlert* alert = [[NSAlert alloc] init];
             [alert setMessageText:@"Error"];
             [alert setInformativeText:[NSString stringWithFormat:@"%@", mongoQuery.error.localizedDescription]];
             [alert setAlertStyle:NSWarningAlertStyle];
@@ -1272,7 +1272,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
     }
     if (error) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Error"];
         [alert setInformativeText:[NSString stringWithFormat:@"%@", error.localizedDescription]];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -1298,7 +1298,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
                                          callback:^(MODQuery *mongoQuery, MODSortedDictionary *documents) {
             if (mongoQuery.error) {
                 
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:@"Error"];
                 [alert setInformativeText:[NSString stringWithFormat:@"%@", mongoQuery.error.localizedDescription]];
                 [alert setAlertStyle:NSWarningAlertStyle];
@@ -1414,7 +1414,7 @@ static NSString *defaultSortOrder(MHDefaultSortOrder defaultSortOrder)
         criteria = [MODSortedDictionary sortedDictionaryWithObjectsAndKeys:inCriteria, @"_id", nil];
         [self.collection removeWithCriteria:criteria callback:^(MODQuery *mongoQuery) {
             if (mongoQuery.error) {
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:@"Error"];
                 [alert setInformativeText:[NSString stringWithFormat:@"%@", mongoQuery.error.localizedDescription]];
                 [alert setAlertStyle:NSWarningAlertStyle];

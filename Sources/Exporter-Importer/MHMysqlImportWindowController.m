@@ -75,7 +75,7 @@
     NSString *collection = [collectionTextField stringValue];
     int chunkSize = [chunkSizeTextField intValue];
     if ([collection length] == 0) {
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Collection name can not be empty!"];
         [alert setAlertStyle:NSWarningAlertStyle];
         [alert addButtonWithTitle:@"Ok"];
@@ -83,7 +83,7 @@
         return;
     }
     if (chunkSize == 0) {
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Chunk Size can not be 0!"];
         [alert setAlertStyle:NSWarningAlertStyle];
         [alert addButtonWithTitle:@"Ok"];
@@ -125,7 +125,7 @@
     copyCollection = [[copyServer databaseForName:self.database.name] collectionForName:collectionName];
     if (!copyServer) {
        
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Can not create a second connection to the mongo server."];
         [alert setAlertStyle:NSWarningAlertStyle];
         [alert addButtonWithTitle:@"Ok"];
@@ -204,7 +204,7 @@
     NSLog(@"Connect: %d", self.mysqlConnection.isConnected);
     if (!self.mysqlConnection.isConnected)
     {
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Could not connect to the mysql server!"];
         [alert setAlertStyle:NSWarningAlertStyle];
         [alert addButtonWithTitle:@"Ok"];

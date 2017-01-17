@@ -239,7 +239,7 @@
     
     value = (uint32_t)[sender stringValue].integerValue;
     if (value < 500 && value != 0) {
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Invalid Value"];
         [alert setInformativeText:@"The timeout should be greater than 500"];
         [alert setAlertStyle:NSCriticalAlertStyle];

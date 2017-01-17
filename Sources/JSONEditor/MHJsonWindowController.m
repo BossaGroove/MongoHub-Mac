@@ -60,7 +60,7 @@
         return YES;
     } else {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Unsaved Document"];
         [alert setInformativeText:@"Do you want to save the current document?"];
         [alert setAlertStyle:NSInformationalAlertStyle];
@@ -146,7 +146,7 @@
             NSLog(@"%@", self.bsonData);
             NSLog(@"%@", jsonString);
             
-            NSAlert* alert = [NSAlert init];
+            NSAlert* alert = [[NSAlert alloc] init];
             [alert setMessageText:@"Error"];
             [alert setInformativeText:[NSString stringWithFormat:@"There is a problem to generate the json. If you save the current json, those values might modified:\n%@\n\nPlease open an issue at https://github.com/jeromelebel/mongohub-mac/issues", [[info objectForKey:@"differences"] componentsJoinedByString:@"\n"]]];
             [alert setAlertStyle:NSWarningAlertStyle];
@@ -161,7 +161,7 @@
         NSLog(@"%@", jsonString);
         NSLog(@"%@", self.jsonDocument);
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Error"];
         [alert setInformativeText:[NSString stringWithFormat:@"There is a problem to generate the json. If you save the current json, those values might modified:\n%@\n\nPlease open an issue at https://github.com/jeromelebel/mongohub-mac/issues", [[info objectForKey:@"differences"] componentsJoinedByString:@"\n"]]];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -218,7 +218,7 @@
     document = [MODRagelJsonParser objectsFromJson:self.jsonTextView.string withError:&error];
     if (error) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert =[[NSAlert alloc] init];
         [alert setMessageText:@"Error"];
         [alert setInformativeText:[NSString stringWithFormat:@"%@", error.localizedDescription]];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -236,7 +236,7 @@
             [self.progressIndicator stopAnimation:self];
             if (mongoQuery.error) {
                 
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:@"Error"];
                 [alert setInformativeText:[NSString stringWithFormat:@"%@", error.localizedDescription]];
                 [alert setAlertStyle:NSWarningAlertStyle];

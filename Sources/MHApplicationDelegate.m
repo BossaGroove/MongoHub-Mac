@@ -230,7 +230,7 @@
         NSError *error = nil;
         NSAlert *alert;
    
-        alert = [NSAlert init];
+        alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Failed to load the store database"];
         [alert setInformativeText:@"By clicking on reset you will loose the connection information"];
         [alert setAlertStyle:NSCriticalAlertStyle];
@@ -679,7 +679,7 @@
     connectionStore = [[[MHConnectionStore alloc] initWithEntity:entity insertIntoManagedObjectContext:nil] autorelease];
     if (![connectionStore setValuesFromStringURL:stringURL errorMessage:&errorMessage]) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:errorMessage];
         [alert setInformativeText:@"%@"];
         [alert setAlertStyle:NSCriticalAlertStyle];

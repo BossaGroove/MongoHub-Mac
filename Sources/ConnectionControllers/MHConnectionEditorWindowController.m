@@ -282,7 +282,7 @@ static MODReadPreferencesReadMode preferenceReadModeFromTag(NSInteger tag)
 {
     [self.delegate connectionWindowControllerDidCancel:self];
     if (self.window.isSheet) {
-        [NSApp endSheet:self.window];
+        [self.window.sheetParent endSheet:self.window];
     } else {
         [self.window close];
     }
@@ -353,7 +353,7 @@ static MODReadPreferencesReadMode preferenceReadModeFromTag(NSInteger tag)
     
     if (hostPort < 0 || hostPort > 65535) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert =[[NSAlert alloc] init];
         [alert setMessageText:NSLocalizedString(@"Error", @"Error")];
         [alert setInformativeText:NSLocalizedString(@"Host port should be between 1 and 65535 (or empty)", @"")];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -367,7 +367,7 @@ static MODReadPreferencesReadMode preferenceReadModeFromTag(NSInteger tag)
     }
     if (alias.length == 0) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:NSLocalizedString(@"Error", @"Error")];
         [alert setInformativeText:NSLocalizedString(@"Name should not be less than 1 charaters", @"")];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -380,7 +380,7 @@ static MODReadPreferencesReadMode preferenceReadModeFromTag(NSInteger tag)
     }
     if (useSSH && sshHost.length == 0) {
        
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:NSLocalizedString(@"Error", @"Error")];
         [alert setInformativeText:NSLocalizedString(@"Tunneling requires SSH Host!", @"")];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -393,7 +393,7 @@ static MODReadPreferencesReadMode preferenceReadModeFromTag(NSInteger tag)
     }
     if (useSSH && (sshPort < 0 || sshPort > 65535)) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:NSLocalizedString(@"Error", @"Error")];
         [alert setInformativeText:NSLocalizedString(@"ssh port should be between 1 and 65535 (or empty)", @"")];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -406,7 +406,7 @@ static MODReadPreferencesReadMode preferenceReadModeFromTag(NSInteger tag)
     }
     if (useReplicaSet && [replicaServers componentsSeparatedByString:@","].count <= 1) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:NSLocalizedString(@"Error", @"Error")];
         [alert setInformativeText:NSLocalizedString(@"You need to set more than one server", @"")];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -419,7 +419,7 @@ static MODReadPreferencesReadMode preferenceReadModeFromTag(NSInteger tag)
     }
     if (useReplicaSet && replicaName.length == 0) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:NSLocalizedString(@"Error", @"Error")];
         [alert setInformativeText:NSLocalizedString(@"You need to set a replica set name", @"")];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -432,7 +432,7 @@ static MODReadPreferencesReadMode preferenceReadModeFromTag(NSInteger tag)
     }
     if (self.adminPasswordTextField.stringValue.length > 0 && self.adminUserTextField.stringValue == 0) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:NSLocalizedString(@"Error", @"Error")];
         [alert setInformativeText:NSLocalizedString(@"You need set a user name if you enter a password", @"")];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -446,7 +446,7 @@ static MODReadPreferencesReadMode preferenceReadModeFromTag(NSInteger tag)
     MHConnectionStore *sameAliasConnection = [self.delegate connectionWindowController:self connectionStoreWithAlias:alias];
     if (sameAliasConnection && sameAliasConnection != self.editedConnectionStore) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:NSLocalizedString(@"Error", @"Error")];
         [alert setInformativeText:NSLocalizedString(@"Name already in use!", @"")];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -487,7 +487,7 @@ static MODReadPreferencesReadMode preferenceReadModeFromTag(NSInteger tag)
     client = [MODClient clientWihtURLString:urlString];
     if (client == nil) {
        
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:NSLocalizedString(@"Error", @"Error")];
         [alert setInformativeText:[NSString stringWithFormat:@"Invalid URL %@", urlString]];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -504,7 +504,7 @@ static MODReadPreferencesReadMode preferenceReadModeFromTag(NSInteger tag)
     }
     [self.delegate connectionWindowControllerDidValidate:self];
     if (self.window.isSheet) {
-        [NSApp endSheet:self.window];
+        [self.window.sheetParent endSheet:self.window];
     } else {
         [self.window close];
     }

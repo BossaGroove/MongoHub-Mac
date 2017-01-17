@@ -72,7 +72,7 @@
     NSString *collection = [collectionTextField stringValue];
     if ([collection length] == 0) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Collection name can not be empty!"];
         [alert setAlertStyle:NSWarningAlertStyle];
         [alert addButtonWithTitle:@"Ok"];
@@ -196,7 +196,7 @@
     NSLog(@"Connect: %d", [db isConnected]);
     if (![db isConnected])
     {
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Could not connect to the mysql server!"];
         [alert setAlertStyle:NSWarningAlertStyle];
         [alert addButtonWithTitle:@"Ok"];

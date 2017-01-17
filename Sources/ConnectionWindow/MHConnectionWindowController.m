@@ -194,7 +194,7 @@
         self.client = [MODClient clientWihtURLString:urlString];
         if (self.client == nil) {
            
-            NSAlert* alert = [NSAlert init];
+            NSAlert* alert = [[NSAlert alloc] init];
             [alert setMessageText:@"Error"];
             [alert setInformativeText:[NSString stringWithFormat:@"Invalid URL %@", urlString]];
             [alert setAlertStyle:NSWarningAlertStyle];
@@ -273,7 +273,7 @@
             }
         } else if (mongoQuery.error) {
            
-            NSAlert* alert = [NSAlert init];
+            NSAlert* alert = [[NSAlert alloc] init];
             [alert setMessageText:@"Error"];
             [alert setInformativeText:[NSString stringWithFormat:@"%@", mongoQuery.error.localizedDescription]];
             [alert setAlertStyle:NSWarningAlertStyle];
@@ -314,7 +314,7 @@
             }
         } else if (mongoQuery.error) {
             
-            NSAlert* alert = [NSAlert init];
+            NSAlert* alert = [[NSAlert alloc] init];
             [alert setMessageText:@"Error"];
             [alert setInformativeText:[NSString stringWithFormat:@"%@", mongoQuery.error.localizedDescription]];
             [alert setAlertStyle:NSWarningAlertStyle];
@@ -402,7 +402,7 @@
             return YES;
         } else {
             
-            NSAlert* alert = [NSAlert init];
+            NSAlert* alert = [[NSAlert alloc] init];
             [alert setMessageText:@"Error"];
             [alert setInformativeText:@"Database name can not be empty"];
             [alert setAlertStyle:NSWarningAlertStyle];
@@ -431,7 +431,7 @@
             [database createCollectionWithName:editNameWindowController.editedValue callback:^(MODQuery *mongoQuery) {
                 if (mongoQuery.error) {
                     
-                    NSAlert* alert = [NSAlert init];
+                    NSAlert* alert = [[NSAlert alloc] init];
                     [alert setMessageText:@"Error"];
                     [alert setInformativeText:[NSString stringWithFormat:@"%@", mongoQuery.error.localizedDescription]];
                     [alert setAlertStyle:NSWarningAlertStyle];
@@ -449,7 +449,7 @@
                 return YES;
             } else {
                 
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:@"Error"];
                 [alert setInformativeText:@"Collection name can not be empty"];
                 [alert setAlertStyle:NSWarningAlertStyle];
@@ -495,7 +495,7 @@
                 }
                 if (mongoQuery.error) {
                     
-                    NSAlert* alert = [NSAlert init];
+                    NSAlert* alert = [[NSAlert alloc] init];
                     [alert setMessageText:@"Error"];
                     [alert setInformativeText:[NSString stringWithFormat:@"%@", mongoQuery.error.localizedDescription]];
                     [alert setAlertStyle:NSWarningAlertStyle];
@@ -512,7 +512,7 @@
                 return YES;
             } else {
                 
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:@"Error"];
                 [alert setInformativeText:@"Collection name can not be empty"];
                 [alert setAlertStyle:NSWarningAlertStyle];
@@ -547,7 +547,7 @@
             [self.loaderIndicator stopAnimation:nil];
             if (mongoQuery.error) {
                 
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:@"Error"];
                 [alert setInformativeText:[NSString stringWithFormat:@"%@", mongoQuery.error.localizedDescription]];
                 [alert setAlertStyle:NSWarningAlertStyle];
@@ -585,7 +585,7 @@
             [self getDatabaseList];
             if (mongoQuery.error) {
                 
-                NSAlert* alert = [NSAlert init];
+                NSAlert* alert = [[NSAlert alloc] init];
                 [alert setMessageText:@"Error"];
                 [alert setInformativeText:[NSString stringWithFormat:@"%@", mongoQuery.error.localizedDescription]];
                 [alert setAlertStyle:NSWarningAlertStyle];
@@ -740,7 +740,7 @@
     if (self.importerExporter.error) {
         [self.delegate connectionWindowControllerLogMessage:self.importerExporter.error.localizedDescription domain:[NSString stringWithFormat:@"%@.%@", self.connectionStore.alias, self.importerExporter.identifier] level:@"error"];
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:self.importerExporter.name];
         [alert setInformativeText:[NSString stringWithFormat:@"%@", self.importerExporter.error.localizedDescription]];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -789,7 +789,7 @@
 {
     if (self.selectedDatabaseItem == nil) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Error"];
         [alert setInformativeText:@"Please specify a database!"];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -813,7 +813,7 @@
 {
     if (self.selectedCollectionItem == nil) {
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Error"];
         [alert setInformativeText:@"Please specify a collection!"];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -1002,7 +1002,7 @@
         [self.loaderIndicator stopAnimation:nil];
         self.statusViewController.title = [NSString stringWithFormat:@"Error: %@", error.localizedDescription];
         
-        NSAlert* alert = [NSAlert init];
+        NSAlert* alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Error"];
         [alert setInformativeText:[NSString stringWithFormat:@"%@", error.localizedDescription]];
         [alert setAlertStyle:NSWarningAlertStyle];
